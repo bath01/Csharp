@@ -1,0 +1,57 @@
+// See https://aka.ms/new-console-template for more information
+
+// int bathAge = 100;
+// string textBath = "Bath a ";
+
+// Console.WriteLine(textBath + bathAge);
+
+using System;
+
+class Livre {
+    public String titre;
+	public String auteur;
+	public int nombreDePages;
+}
+public class Program
+{
+    
+    public static void Main(string[] args)
+    {
+        Livre monLivre = new Livre();
+        monLivre.titre = "Dieu";
+        monLivre.auteur = "Bath";
+        monLivre.nombreDePages = 145;
+
+        int jourDeDepart = 3;
+
+        const int joursDansSemaine = 7;
+
+        string premiereVillePreferee = "New York";
+        string secondeVillePreferee = "Buenos Aires";
+
+        string favoris = premiereVillePreferee + secondeVillePreferee ;
+
+        Console.WriteLine(favoris);
+        Console.WriteLine("Il y a " + jourDeDepart + " jours dans la semaine.");
+        Console.WriteLine("Votre jour de départ du mois est : " + joursDansSemaine);
+
+
+        Console.WriteLine("Le titre est : " + monLivre.titre + " et l'auteur est " + monLivre.auteur + " avec pour "
+        + monLivre.nombreDePages + " pages");
+
+
+        String[] bathArray = new String[] { "rouge", "vert", "violet", "bleu", "marron"};
+
+        foreach(String bath in bathArray){
+            Console.WriteLine(bath);
+        }
+
+
+    }
+}
+
+
+
+
+
+// Livre monLivre = new Livre("Bath", "dorgeles", 123);

@@ -1,0 +1,92 @@
+﻿using System;
+
+namespace Communication
+{
+    /// <summary>
+    /// Démonstration de la récupération et du contrôle des données saisies par un utilisateur
+    /// </summary>
+    /// <remarks>L'équipe éducative d'OpenClassrooms</remarks>
+    public class DonneeUtilisateur
+    {
+        /// <summary>
+        /// Vérifier si l'utilisateur a fourni une URL à partir de la ligne de commande
+        /// Si ce n'est pas le cas, en demander une
+        /// Dans tous les cas, vérifier que l’URL est valide !
+        /// </summary>
+        /// <param name="args">Soit la variable ne contient rien, soit elle contient une chaîne qui est l'URL</param>
+        public static void Main(string[] args)
+        {
+            string chaineUrl = "";
+            int nombreArguments;
+
+            if (args == null)
+            {
+                nombreArguments = 0;
+            }
+            else
+            {
+                nombreArguments = args.Length;
+            }
+
+            /// Affecter une valeur à chaineUrl ou quitter
+            switch (nombreArguments)
+            {
+                case 0:
+                    chaineUrl = DemanderUneUrl();
+                    break;
+                case 1:
+                    chaineUrl = args[0];
+                    break;
+                default:
+                    Console.WriteLine("Veuillez exécuter le programme en spécifiant une URL ou aucun argument");
+                    Environment.Exit(-1);
+                    break;
+            }
+
+            Console.WriteLine("Vérification de l'URL " + chaineUrl);
+        
+            if (URLValide(chaineUrl))
+            {
+                Console.WriteLine(chaineUrl + " est une URL valide");
+            }
+            else
+            {
+                Console.WriteLine(chaineUrl + " n'est pas une URL valide");
+            }
+
+            
+            
+        }
+
+        /// <summary>
+        /// Demander à l'utilisateur de saisir une URL
+        /// </summary>
+        /// <returns>Une représentation sous forme de chaîne de caractères de l'URL saisie par l'utilisateur</returns>.
+         public static string DemanderUneUrl()
+        {
+            Console.WriteLine("Veuillez saisir une URL valide");
+            string url = Console.ReadLine();
+            return url;
+        }
+
+
+        /// <summary>
+        /// Vérifier la mise en forme d'une URL
+        /// </summary>
+        /// <param name="urlString"></param>
+        /// <returns>Vrai si le format correspond a une URL, sinon faux<returns>
+        private static bool URLValide(string chaineUrl)
+        {
+            if (Uri.IsWellFormedUriString(chaineUrl, UriKind.Absolute))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+    }
+
+           
+}

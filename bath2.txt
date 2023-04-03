@@ -1,0 +1,99 @@
+using System;
+
+namespace Hello
+{
+    public class HelloWorld{
+        enum Direction
+            {
+                nord,
+                est,
+                sud,
+                ouest
+            }
+        public static void Main(string[] args)
+        {
+            
+            //Condition avec une liste utilisant enumeration(enum Name{..})
+
+            Direction direction = Direction.sud;
+
+            switch(direction){
+                case Direction.nord:
+                    Console.WriteLine("Vous aller au nord");
+                    break;
+                case Direction.est:
+                    Console.WriteLine("Vous aller a l'est");
+                    break;
+                case Direction.sud:
+                    Console.WriteLine("Vous aller au sud");
+                    break;
+                case Direction.ouest:
+                    Console.WriteLine("Vous aller a l'ouest");
+                    break;
+            }
+
+            //Conditions
+            if (args.Length == 1)
+            {
+                DireBonjour(args[0]);
+            } else {
+                 DireBonjour("Bath Dorgeles");
+            }
+
+            int age = 14;
+            if (age>= 16)
+            {
+                Console.WriteLine("Bien sa meerciiii!!");
+            } else if (age<= 15)
+            {   
+                Console.WriteLine("Inferieur");
+            }
+
+
+            //Boucle
+            for (int i = 0; i < 4; i++)
+            {
+                Console.WriteLine("bath dorgeles");                                                                                               
+            }
+
+            //Boucle avec Tableau
+            int[] bathArray = new int[] { 5, 2, 1, 9 };
+            for (int i = 0; i < bathArray.Length; i++)
+            {
+                Console.WriteLine(bathArray[i]);
+            }
+
+            // Avec While 
+            int nombreArbre = 0;
+            while(nombreArbre < 10){
+                nombreArbre += 1;
+                Console.WriteLine("J'ai planté " + nombreArbre + " arbres");
+            }
+            Console.WriteLine("Bath possède une Foret");
+
+            // Boucle do/while
+            int objectifPompe = 10;
+
+            do
+            {
+                Console.WriteLine("Une pompe !");
+                objectifPompe -= 1;
+            } while (objectifPompe > 0);
+
+        }
+
+
+
+        // Fonction
+        private static void DireBonjour(string destinataire){
+            Console.WriteLine("Bonjour " + destinataire + "!");
+        }
+
+
+        // string phraseODC = "Le type String de C# est en fait une classe pas un type Simple !";
+
+        //     Console.WriteLine(phraseODC.ToUpper());
+
+        //     Console.WriteLine(phraseODC.Replace("Simple","bath Bradley"));
+    }
+}
